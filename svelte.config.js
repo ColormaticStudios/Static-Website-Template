@@ -1,0 +1,18 @@
+import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
+import adapter from "@sveltejs/adapter-static";
+
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+	preprocess: vitePreprocess(),
+	kit: {
+		adapter: adapter(),
+		alias: {
+			style: "src/style",
+		},
+	},
+	compilerOptions: {
+		runes: true, // Require Svelte 5
+	},
+};
+
+export default config;
